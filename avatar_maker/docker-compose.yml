@@ -1,0 +1,8 @@
+services:
+  avatar_maker:
+    build:
+      context: .
+    container_name: avatar_maker
+    volumes:
+      - ./app:/app
+    working_dir: /app
