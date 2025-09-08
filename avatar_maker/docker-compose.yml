@@ -1,8 +1,22 @@
 services:
-  avatar_maker:
+  avatar_maker_app:
     build:
-      context: .
-    container_name: avatar_maker
+      context: docker-receipt
+      dockerfile: DockerfileCli
+    container_name: avatar_maker_app
     volumes:
       - ./app:/app
     working_dir: /app
+    environment:
+      - APP_FLASK=/app/webapp/app.py
+  avatar_maker_web:
+    build:
+      context: docker-receipt
+      dockerfile: DockerfileNode
+    container_name: avatar_maker_web
+    volumes:
+      - ./web:/app
+    working_dir: /app
+    ports:
+      - "3001:3000"
+    

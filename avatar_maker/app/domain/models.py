@@ -8,7 +8,7 @@ models_names = [
     {'name': 'stabilityai/stable-diffusion-xl-256-v1-0', 'suggestion': 'ai_suggestion'},
     {'name': 'stabilityai/stable-diffusion-xl-1.0', 'suggestion': 'ai_suggestion'},
     {'name': 'runwayml/stable-diffusion-3-base', 'suggestion': 'ai_suggestion'},
-    {'name': 'runwayml/stable-diffusion-v1-5', 'suggestion': 'picked'},
+    {'name': 'runwayml/stable-diffusion-v1-5', 'suggestion': 'disabled'},
     {'name': 'CompVis/stable-diffusion-v1-4', 'suggestion': 'ai_suggestion'},
     {'name': 'runwayml/stable-diffusion-2-base', 'suggestion': 'ai_suggestion'},
     {'name': 'runwayml/stable-diffusion-2-1-base', 'suggestion': 'ai_suggestion'},
@@ -63,4 +63,7 @@ models_names = [
     {'name': 'darkstorm2150/Protogen_x5.27_Official_Release', 'suggestion': 'ai_suggestion'},
     {'name': 'black-forest-labs/FLUX.1-dev', 'suggestion': 'picked'},
     {'name': 'latent-consistency/lcm-lora-sdxl', 'suggestion': 'picked'},
+    {'name': 'Qwen/Qwen-Image-Edit', 'suggestion': 'picked'},
+    {'name': 'stable-diffusion-v1-5/stable-diffusion-v1-5', 'suggestion': 'picked'},
+    {'name': 'stabilityai/stable-diffusion-3.5-large', 'suggestion': 'picked'},
 ]
