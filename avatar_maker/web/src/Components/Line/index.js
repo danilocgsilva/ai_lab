@@ -12,7 +12,6 @@ const Line = (props) => {
             break;
     }
 
-
     return (
         <li className="bg-white shadow-md rounded-2xl p-4 flex items-center justify-between hover:shadow-lg transition">
             <div>

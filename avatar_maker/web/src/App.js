@@ -1,21 +1,35 @@
 import Line from './Components/Line';
+import { useState, useEffect } from 'react';
 
-function App() {
+async function getData() {
+  try {
+    const response = await fetch("http://0.0.0.0:5001/");
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Fetch error:", error);
+  }
+}
 
-    const models_names = [
-        { 
-            name: "Finish project report", 
-        },
-        {
-            name: "Prepare presentation slides",
-        },
-        {
-            name: "The model name",
-        },
-        {
-            name: "One more",
+async function provideModels() {
+    const models_names = await getData();
+    console.log(models_names);
+    return models_names;
+}
+
+const App = () => {
+    const [models, setModels] = useState([]);
+
+    useEffect(() => {
+        async function fetchModels() {
+            const modelsData = await provideModels();
+            setModels(modelsData || []);
         }
-    ]
+        fetchModels();
+    }, []);
 
     return (
         <div className="bg-gray-100 min-h-screen flex items-center justify-center p-6">
@@ -25,13 +39,13 @@ function App() {
 
                 <ul className="space-y-4">
                     {
-                        models_names.map((model, index) => (
-                            <Line 
-                                key={index}
-                                label={model.name} 
-                                thinLine={model.thinLine} 
-                                tagMessage={model.tag?.tagMessage} 
-                                tagType={model.tag?.tagType} 
+                        models.map((model) => (
+                            <Line
+                                key={model.name}
+                                label={model.name}
+                                thinLine={model.thinLine}
+                                tagMessage={model.tag?.tagMessage}
+                                tagType={model.tag?.tagType}
                             />
                         ))
                     }

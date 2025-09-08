@@ -8,7 +8,9 @@ services:
       - ./app:/app
     working_dir: /app
     environment:
-      - APP_FLASK=/app/webapp/app.py
+      - FLASK_APP=/app/webapi/app.py
+    ports:
+      - "5001:5000"
   avatar_maker_web:
     build:
       context: docker-receipt
@@ -19,4 +21,6 @@ services:
     working_dir: /app
     ports:
       - "3001:3000"
-    
+    depends_on:
+      - avatar_maker_app
+
