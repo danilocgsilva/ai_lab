@@ -1,7 +1,7 @@
 from domain.models import models_names
 import sys
 import argparse
-from domain.Model import Model
+from domain.Models.Entry import Model
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--picked-models', '-p', action='store_true', help='List just the author selected models')

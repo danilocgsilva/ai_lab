@@ -1,5 +1,4 @@
-class Model:
-    
+class Entry:
     def __init__(self, name, suggestion):
         self._name = name
         self._suggestion = suggestion
