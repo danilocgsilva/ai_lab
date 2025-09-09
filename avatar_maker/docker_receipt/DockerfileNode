@@ -1,0 +1,6 @@
+FROM node:latest
+
+COPY ./npm_install_and_start.sh /
+RUN chmod +x ./npm_install_and_start.sh
+
+CMD /npm_install_and_start.sh

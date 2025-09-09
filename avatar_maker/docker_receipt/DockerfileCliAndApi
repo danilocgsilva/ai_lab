@@ -6,5 +6,7 @@ RUN apt-get install python3 -y
 RUN apt-get install python3-pip -y
 RUN apt-get install git -y
 RUN pip3 install flask --break-system-packages
+RUN pip3 install flask_cors --break-system-packages
 
-CMD while : ; do sleep 1000; done
+CMD flask run --host=0.0.0.0
+

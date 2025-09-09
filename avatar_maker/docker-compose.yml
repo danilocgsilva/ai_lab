@@ -1,8 +1,8 @@
 services:
   avatar_maker_app:
     build:
-      context: docker-receipt
-      dockerfile: DockerfileCli
+      context: docker_receipt
+      dockerfile: DockerfileCliAndApi
     container_name: avatar_maker_app
     volumes:
       - ./app:/app
@@ -13,7 +13,7 @@ services:
       - "5001:5000"
   avatar_maker_web:
     build:
-      context: docker-receipt
+      context: docker_receipt
       dockerfile: DockerfileNode
     container_name: avatar_maker_web
     volumes:
