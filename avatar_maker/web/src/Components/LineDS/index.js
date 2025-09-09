@@ -1,15 +1,52 @@
-const LineDS = (props) => {
+const selectMainLineClasses = (borderColor) => {
+    let lineMainClasses = 'bg-white rounded-lg shadow-md p-6 border-l-4 entry ';
+
+    switch (borderColor) {
+        case 'on':
+            lineMainClasses += 'border-blue-500';
+            break;
+        case 'off':
+            lineMainClasses += 'border-gray-300';
+            break;
+        default:
+            lineMainClasses += 'border-gray-300';
+    }
+
+    return lineMainClasses;
+};
+
+const selectWrapLableClasses = (thinLine, footerLine) => {
+    let wrapLabelClasses = 'flex items-start justify-between ';
+
+    if (thinLine === "" && footerLine === "") {
+        wrapLabelClasses += 'mb-3';
+    }
+    return wrapLabelClasses;
+};
+
+const LineDS = ({borderColor, label, thinLine, footerLine}) => {
+
+    let lineMainClasses = selectMainLineClasses(borderColor);
+    let wrapLabelClasses = selectWrapLableClasses(thinLine, footerLine);
+
     return (
-        <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500 entry" data-active="true" data-important="true">
-            <div className="flex items-start justify-between mb-3">
-                <h3 className="text-lg font-semibold text-gray-800">Project Update</h3>
+        <div className={lineMainClasses} data-active="true" data-important="true">
+            <div className={wrapLabelClasses}>
+                <h3 className="text-lg font-semibold text-gray-800">{label}</h3>
                 <div className="flex items-center space-x-2">
                     <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Active</span>
                     <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Important</span>
                 </div>
             </div>
-            <p className="text-gray-600 mb-4">Completed the initial design phase and started development. The team is making good progress on the frontend components.</p>
-            <div className="text-sm text-gray-500">Created: September 9, 2024</div>
+
+            {thinLine && (
+                <p className="text-gray-600 mb-4">{thinLine}</p>
+            )}
+            {
+                footerLine && (
+                    <div className="text-sm text-gray-500">{footerLine}</div>
+                )
+            }
         </div>
     );
 };

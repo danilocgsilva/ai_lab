@@ -44,7 +44,7 @@ const AppDS = (props) => {
 
 
 
-                    <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500 entry" data-active="true" data-important="true">
+                    <div className="bg-white rounded-lg shadow-md p-6 border-l-4 entry border-blue-500" data-active="true" data-important="true">
                         <div className="flex items-start justify-between mb-3">
                             <h3 className="text-lg font-semibold text-gray-800">Project Update</h3>
                             <div className="flex items-center space-x-2">
@@ -56,7 +56,7 @@ const AppDS = (props) => {
                         <div className="text-sm text-gray-500">Created: September 9, 2024</div>
                     </div>
 
-                    <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-gray-300 entry" data-active="false" data-important="true">
+                    <div className="bg-white rounded-lg shadow-md p-6 border-l-4 entry border-gray-300" data-active="false" data-important="true">
                         <div className="flex items-start justify-between mb-3">
                             <h3 className="text-lg font-semibold text-gray-800">Meeting Notes</h3>
                             <div className="flex items-center space-x-2">
@@ -90,7 +90,16 @@ const AppDS = (props) => {
                         <div className="text-sm text-gray-500">Created: August 15, 2024</div>
                     </div>
 
-                    <LineDS />
+                    <LineDS
+                        borderColor="on"
+                        label="Sample Entry"
+                        thinLine="This is a sample entry demonstrating the LineDS component."
+                        footerLine="Created: September 10, 2024"
+                    />
+
+                    <LineDS
+                        label="This line must be simple"
+                    />
 
                 </div>
 
