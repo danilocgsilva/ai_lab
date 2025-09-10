@@ -1,0 +1,7 @@
+services:
+  front:
+    build:
+      context: .
+    container_name: front
+    volumes:
+      - './app:/app'

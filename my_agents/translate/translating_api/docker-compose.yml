@@ -1,0 +1,5 @@
+services:
+  !!binary dHJhbnPDbGF0aW5nX2FwaQ==:
+    build:
+      context: .
+    container_name: !!binary dHJhbnPDbGF0aW5nX2FwaQ==

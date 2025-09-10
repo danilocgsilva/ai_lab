@@ -1,0 +1,1 @@
+# Local environment for AI exercises

@@ -5,4 +5,4 @@ services:
     container_name: alura_ai_agents_imersion
     volumes:
       - "./app:/app"
-
+    working_dir: '/app'
