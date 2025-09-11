@@ -1,0 +1,5 @@
+services:
+  google_ai_chat_layer_api:
+    build:
+      context: .
+    container_name: google_ai_chat_layer_api

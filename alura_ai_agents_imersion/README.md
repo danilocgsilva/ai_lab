@@ -3,3 +3,7 @@
 ## How to get the key?
 
 Read video content between 10 and 20 minutes.
+
+## Where to get the api key?
+
+https://aistudio.google.com/apikey

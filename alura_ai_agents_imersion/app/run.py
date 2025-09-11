@@ -4,8 +4,12 @@ import os
 
 GOOGLE_API_KEY = os.environ.get('GEMINI_KEY')
 
-modelo = "google/gemma-3-12b"
+# modelo = "google/gemma-3-12b"
+# modelo = "google/gemma-3-4b"
 # modelo = "google/gemma-3-12b-it"
+# modelo = "Gemma 3 4B"
+# modelo = "Gemma 3 4B"
+modelo = "models/gemma-3-4b-it"
 
 llm = ChatGoogleGenerativeAI(
     model=modelo,

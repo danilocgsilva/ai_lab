@@ -1,0 +1,8 @@
+{
+  "short_name": "Ask and answer local AI",
+  "name": "Ask and answer local AI",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

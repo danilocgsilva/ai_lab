@@ -1,33 +1,23 @@
-import os
 import google.generativeai as genai
+from functions import format_module_info, format2, configure_genai
+import re
 
-GOOGLE_API_KEY = os.environ.get("GEMINI_KEY")   # <-- make sure this is set
+configure_genai()
 
-if not GOOGLE_API_KEY:
-    raise RuntimeError("Please export GEMINI_KEY before running")
+models = genai.list_models()
 
-genai.configure(api_key=GOOGLE_API_KEY)
+index = 1
+for model in models:
+    string_returned = format2(index, model)
+    if re.search(r'gemma', string_returned, re.IGNORECASE):
+        print("-" * 40)
+        print(
+            format_module_info(index, model)
+        )
+    # print(
+    #     format_module_info(index, model)
+    # )
 
-# The call returns a list of `genai.types.Model` objects
-models = genai.list_models()          # ← This is the function you asked for
-models_list = list(models)
-
-print(f"Found {len(models_list)} model(s)")
-
-print(type(models_list[0]).__name__)
-
-print(models_list[0])
-
-index = 0
-
-for m in models_list:
-    print("-" * 40)
-    print(f"{index}.")
-#     # print(f"id:          {m.model_id}")           # e.g. "gemma-2"
-#     print(f"displayName: {m.display_name}")
-#     print(f"description: {m.description}")
-#     print(f"supportedMethods: {m.supported_methods}")   # ["generateContent", ...]
-    print(f"base_model_id: {m.base_model_id}")
-    print(f"version: {m.version}")
-    print(f"display_name: {m.display_name}")
     index += 1
+
+
