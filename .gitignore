@@ -2,3 +2,5 @@ avatar_maker/app/__pycache__/*
 avatar_maker/app/domain/__pycache__/*
 avatar_maker/app/webapi/__pycache__/*
 alura_ai_agents_imersion/app/__pycache__/*
+my_agents/google_ai_chat_layer/.env
+my_agents/google_ai_chat_layer/google_ai_chat_layer_api/app/__pycache__/*

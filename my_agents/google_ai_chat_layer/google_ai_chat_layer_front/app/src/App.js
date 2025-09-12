@@ -1,12 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+const fetchAnswer = async (question, model) => {
+    try {
+        const response = await fetch("http://localhost:5000", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                question,
+                model
+            })
+        });
+        if (!response.ok) {
+            throw new Error("Network response was not ok " + response.statusText);
+        }
+        const data = await response.json();
+        return data.answer;
+    } catch (error) {
+        console.error("Fetch error:", error);
+    }
+}
 
 const App = () => {
 
-    const [ isReadOnly, setReadOnly ] = useState(false);
+    const [isReadOnly, setReadOnly] = useState(false);
+    const [answer, setAnswer] = useState('');
+    const [question, setQuestion] = useState('');
+    const [model, setModel] = useState('models/gemma-3-4b-it');
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         setReadOnly(true);
+        const answer = await fetchAnswer(question, model);
+        setAnswer(answer);
     }
 
     let textAreaClasses = "pl-10 w-full rounded-lg border-gray-300 border focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 py-3 px-4 transition duration-300";
@@ -25,17 +50,18 @@ const App = () => {
                     <form className="space-y-6" onSubmit={onSubmit}>
 
                         <div>
-                            <label for="message" className="block text-sm font-medium text-gray-700 mb-1">Question</label>
+                            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Question</label>
                             <div className="relative">
                                 <div className="absolute top-3 left-3 pointer-events-none">
                                     <i className="fas fa-comment text-gray-400"></i>
                                 </div>
                                 <textarea id="message" rows="4" readOnly={isReadOnly}
                                     className={textAreaClasses}
-                                    placeholder="Your question here..."></textarea>
+                                    placeholder="Your question here..."
+                                    value={question}
+                                    onChange={e => setQuestion(e.target.value)}></textarea>
                             </div>
                         </div>
-
 
                         <div className="pt-4">
                             <button type="submit"
@@ -47,6 +73,12 @@ const App = () => {
                             </button>
                         </div>
                     </form>
+
+                    <div className="answer">
+                        <div className='py-4'>
+                            {answer}
+                        </div>
+                    </div>
 
                 </div>
             </div>
