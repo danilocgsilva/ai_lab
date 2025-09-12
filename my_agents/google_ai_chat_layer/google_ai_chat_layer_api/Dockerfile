@@ -12,6 +12,7 @@ RUN apt-get install git -y
 RUN pip install Flask --break-system-packages
 RUN pip install flask-cors --break-system-packages
 RUN pip install pip-tools --break-system-packages
+RUN pip install -r requirements.txt --break-system-packages
 
-# CMD flask run --host=0.0.0.0 --debug
-CMD while : ; do sleep 1000; done
+CMD flask run --host=0.0.0.0 --debug
+# CMD while : ; do sleep 1000; done

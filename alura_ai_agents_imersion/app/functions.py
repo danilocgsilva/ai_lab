@@ -1,5 +1,6 @@
 import google.generativeai as genai
 import os
+import argparse
 
 def format_module_info(index, m):
   """Formats module information into a single string.
@@ -33,3 +34,39 @@ def configure_genai():
         raise RuntimeError("Please export GEMINI_KEY before running")
 
     genai.configure(api_key=GOOGLE_API_KEY)
+
+def getArguments():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--model',
+        '-m',
+        type=str,
+        required=False,
+        help='The model to be used',
+        default='gemini-2.5-flash'
+    )
+    parser.add_argument(
+        '--temperature',
+        '-t',
+        type=float,
+        required=False,
+        help='Temperature to be used',
+        default=0.5
+    )
+    parser.add_argument(
+        '--question',
+        '-q',
+        type=str,
+        required=False,
+        help='Question to be done',
+    )
+    parser.add_argument(
+        '--use-system-prompt',
+        '-s',
+        action='store_true',
+        required=False,
+        help='If should I use the system prompt',
+        default=False
+    )
+    
+    return parser.parse_args()

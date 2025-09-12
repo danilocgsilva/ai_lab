@@ -1,0 +1,520 @@
+----------------------------------------
+2.
+Name: models/embedding-gecko-001
+displayName: Embedding Gecko
+description: Obtain a distributed representation of a text.
+supportedMethods: ['embedText', 'countTextTokens']
+version: 001
+display_name: Embedding Gecko
+----------------------------------------
+3.
+Name: models/gemini-1.5-pro-latest
+displayName: Gemini 1.5 Pro Latest
+description: Alias that points to the most recent production (non-experimental) release of Gemini 1.5 Pro, our mid-size multimodal model that supports up to 2 million tokens.
+supportedMethods: ['generateContent', 'countTokens']
+version: 001
+display_name: Gemini 1.5 Pro Latest
+----------------------------------------
+4.
+Name: models/gemini-1.5-pro-002
+displayName: Gemini 1.5 Pro 002
+description: Stable version of Gemini 1.5 Pro, our mid-size multimodal model that supports up to 2 million tokens, released in September of 2024.
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent']
+version: 002
+display_name: Gemini 1.5 Pro 002
+----------------------------------------
+5.
+Name: models/gemini-1.5-pro
+displayName: Gemini 1.5 Pro
+description: Stable version of Gemini 1.5 Pro, our mid-size multimodal model that supports up to 2 million tokens, released in May of 2024.
+supportedMethods: ['generateContent', 'countTokens']
+version: 001
+display_name: Gemini 1.5 Pro
+----------------------------------------
+6.
+Name: models/gemini-1.5-flash-latest
+displayName: Gemini 1.5 Flash Latest
+description: Alias that points to the most recent production (non-experimental) release of Gemini 1.5 Flash, our fast and versatile multimodal model for scaling across diverse tasks.
+supportedMethods: ['generateContent', 'countTokens']
+version: 001
+display_name: Gemini 1.5 Flash Latest
+----------------------------------------
+7.
+Name: models/gemini-1.5-flash
+displayName: Gemini 1.5 Flash
+description: Alias that points to the most recent stable version of Gemini 1.5 Flash, our fast and versatile multimodal model for scaling across diverse tasks.
+supportedMethods: ['generateContent', 'countTokens']
+version: 001
+display_name: Gemini 1.5 Flash
+----------------------------------------
+8.
+Name: models/gemini-1.5-flash-002
+displayName: Gemini 1.5 Flash 002
+description: Stable version of Gemini 1.5 Flash, our fast and versatile multimodal model for scaling across diverse tasks, released in September of 2024.
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent']
+version: 002
+display_name: Gemini 1.5 Flash 002
+----------------------------------------
+9.
+Name: models/gemini-1.5-flash-8b
+displayName: Gemini 1.5 Flash-8B
+description: Stable version of Gemini 1.5 Flash-8B, our smallest and most cost effective Flash model, released in October of 2024.
+supportedMethods: ['createCachedContent', 'generateContent', 'countTokens']
+version: 001
+display_name: Gemini 1.5 Flash-8B
+----------------------------------------
+10.
+Name: models/gemini-1.5-flash-8b-001
+displayName: Gemini 1.5 Flash-8B 001
+description: Stable version of Gemini 1.5 Flash-8B, our smallest and most cost effective Flash model, released in October of 2024.
+supportedMethods: ['createCachedContent', 'generateContent', 'countTokens']
+version: 001
+display_name: Gemini 1.5 Flash-8B 001
+----------------------------------------
+11.
+Name: models/gemini-1.5-flash-8b-latest
+displayName: Gemini 1.5 Flash-8B Latest
+description: Alias that points to the most recent production (non-experimental) release of Gemini 1.5 Flash-8B, our smallest and most cost effective Flash model, released in October of 2024.
+supportedMethods: ['createCachedContent', 'generateContent', 'countTokens']
+version: 001
+display_name: Gemini 1.5 Flash-8B Latest
+----------------------------------------
+12.
+Name: models/gemini-2.5-pro-preview-03-25
+displayName: Gemini 2.5 Pro Preview 03-25
+description: Gemini 2.5 Pro Preview 03-25
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5-preview-03-25
+display_name: Gemini 2.5 Pro Preview 03-25
+----------------------------------------
+13.
+Name: models/gemini-2.5-flash-preview-05-20
+displayName: Gemini 2.5 Flash Preview 05-20
+description: Preview release (April 17th, 2025) of Gemini 2.5 Flash
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5-preview-05-20
+display_name: Gemini 2.5 Flash Preview 05-20
+----------------------------------------
+14.
+Name: ```````models/gemini-2.5-Flash        ```````
+displayName: Gemini 2.5 Flash
+description: Stable version of Gemini 2.5 Flash, our mid-size multimodal model that supports up to 1 million tokens, released in June of 2025.
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 001
+display_name: Gemini 2.5 Flash
+----------------------------------------
+15.
+Name: models/gemini-2.5-flash-lite-preview-06-17
+displayName: Gemini 2.5 Flash-Lite Preview 06-17
+description: Preview release (June 11th, 2025) of Gemini 2.5 Flash-Lite
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5-preview-06-17
+display_name: Gemini 2.5 Flash-Lite Preview 06-17
+----------------------------------------
+16.
+Name: models/gemini-2.5-pro-preview-05-06
+displayName: Gemini 2.5 Pro Preview 05-06
+description: Preview release (May 6th, 2025) of Gemini 2.5 Pro
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5-preview-05-06
+display_name: Gemini 2.5 Pro Preview 05-06
+----------------------------------------
+17.
+Name: models/gemini-2.5-pro-preview-06-05
+displayName: Gemini 2.5 Pro Preview
+description: Preview release (June 5th, 2025) of Gemini 2.5 Pro
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5-preview-06-05
+display_name: Gemini 2.5 Pro Preview
+----------------------------------------
+18.
+Name: models/gemini-2.5-pro
+displayName: Gemini 2.5 Pro
+description: Stable release (June 17th, 2025) of Gemini 2.5 Pro
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5
+display_name: Gemini 2.5 Pro
+----------------------------------------
+19.
+Name: models/gemini-2.0-flash-exp
+displayName: Gemini 2.0 Flash Experimental
+description: Gemini 2.0 Flash Experimental
+supportedMethods: ['generateContent', 'countTokens', 'bidiGenerateContent']
+version: 2.0
+display_name: Gemini 2.0 Flash Experimental
+----------------------------------------
+20.
+Name: models/gemini-2.0-flash
+displayName: Gemini 2.0 Flash
+description: Gemini 2.0 Flash
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.0
+display_name: Gemini 2.0 Flash
+----------------------------------------
+21.
+Name: models/gemini-2.0-flash-001
+displayName: Gemini 2.0 Flash 001
+description: Stable version of Gemini 2.0 Flash, our fast and versatile multimodal model for scaling across diverse tasks, released in January of 2025.
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.0
+display_name: Gemini 2.0 Flash 001
+----------------------------------------
+22.
+Name: models/gemini-2.0-flash-exp-image-generation
+displayName: Gemini 2.0 Flash (Image Generation) Experimental
+description: Gemini 2.0 Flash (Image Generation) Experimental
+supportedMethods: ['generateContent', 'countTokens', 'bidiGenerateContent']
+version: 2.0
+display_name: Gemini 2.0 Flash (Image Generation) Experimental
+----------------------------------------
+23.
+Name: models/gemini-2.0-flash-lite-001
+displayName: Gemini 2.0 Flash-Lite 001
+description: Stable version of Gemini 2.0 Flash-Lite
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.0
+display_name: Gemini 2.0 Flash-Lite 001
+----------------------------------------
+24.
+Name: models/gemini-2.0-flash-lite
+displayName: Gemini 2.0 Flash-Lite
+description: Gemini 2.0 Flash-Lite
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.0
+display_name: Gemini 2.0 Flash-Lite
+----------------------------------------
+25.
+Name: models/gemini-2.0-flash-preview-image-generation
+displayName: Gemini 2.0 Flash Preview Image Generation
+description: Gemini 2.0 Flash Preview Image Generation
+supportedMethods: ['generateContent', 'countTokens', 'batchGenerateContent']
+version: 2.0
+display_name: Gemini 2.0 Flash Preview Image Generation
+----------------------------------------
+26.
+Name: models/gemini-2.0-flash-lite-preview-02-05
+displayName: Gemini 2.0 Flash-Lite Preview 02-05
+description: Preview release (February 5th, 2025) of Gemini 2.0 Flash-Lite
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: preview-02-05
+display_name: Gemini 2.0 Flash-Lite Preview 02-05
+----------------------------------------
+27.
+Name: models/gemini-2.0-flash-lite-preview
+displayName: Gemini 2.0 Flash-Lite Preview
+description: Preview release (February 5th, 2025) of Gemini 2.0 Flash-Lite
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: preview-02-05
+display_name: Gemini 2.0 Flash-Lite Preview
+----------------------------------------
+28.
+Name: models/gemini-2.0-pro-exp
+displayName: Gemini 2.0 Pro Experimental
+description: Experimental release (March 25th, 2025) of Gemini 2.5 Pro
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5-exp-03-25
+display_name: Gemini 2.0 Pro Experimental
+----------------------------------------
+29.
+Name: models/gemini-2.0-pro-exp-02-05
+displayName: Gemini 2.0 Pro Experimental 02-05
+description: Experimental release (March 25th, 2025) of Gemini 2.5 Pro
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5-exp-03-25
+display_name: Gemini 2.0 Pro Experimental 02-05
+----------------------------------------
+30.
+Name: models/gemini-exp-1206
+displayName: Gemini Experimental 1206
+description: Experimental release (March 25th, 2025) of Gemini 2.5 Pro
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5-exp-03-25
+display_name: Gemini Experimental 1206
+----------------------------------------
+31.
+Name: models/gemini-2.0-flash-thinking-exp-01-21
+displayName: Gemini 2.5 Flash Preview 05-20
+description: Preview release (April 17th, 2025) of Gemini 2.5 Flash
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5-preview-05-20
+display_name: Gemini 2.5 Flash Preview 05-20
+----------------------------------------
+32.
+Name: models/gemini-2.0-flash-thinking-exp
+displayName: Gemini 2.5 Flash Preview 05-20
+description: Preview release (April 17th, 2025) of Gemini 2.5 Flash
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5-preview-05-20
+display_name: Gemini 2.5 Flash Preview 05-20
+----------------------------------------
+33.
+Name: models/gemini-2.0-flash-thinking-exp-1219
+displayName: Gemini 2.5 Flash Preview 05-20
+description: Preview release (April 17th, 2025) of Gemini 2.5 Flash
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 2.5-preview-05-20
+display_name: Gemini 2.5 Flash Preview 05-20
+----------------------------------------
+34.
+Name: models/gemini-2.5-flash-preview-tts
+displayName: Gemini 2.5 Flash Preview TTS
+description: Gemini 2.5 Flash Preview TTS
+supportedMethods: ['countTokens', 'generateContent']
+version: gemini-2.5-flash-exp-tts-2025-05-19
+display_name: Gemini 2.5 Flash Preview TTS
+----------------------------------------
+35.
+Name: models/gemini-2.5-pro-preview-tts
+displayName: Gemini 2.5 Pro Preview TTS
+description: Gemini 2.5 Pro Preview TTS
+supportedMethods: ['countTokens', 'generateContent']
+version: gemini-2.5-pro-preview-tts-2025-05-19
+display_name: Gemini 2.5 Pro Preview TTS
+----------------------------------------
+36.
+Name: models/learnlm-2.0-flash-experimental
+displayName: LearnLM 2.0 Flash Experimental
+description: LearnLM 2.0 Flash Experimental
+supportedMethods: ['generateContent', 'countTokens']
+version: 2.0
+display_name: LearnLM 2.0 Flash Experimental
+----------------------------------------
+37.
+Name: models/gemma-3-1b-it
+displayName: Gemma 3 1B
+description: 
+supportedMethods: ['generateContent', 'countTokens']
+version: 001
+display_name: Gemma 3 1B
+----------------------------------------
+38.
+Name: models/gemma-3-4b-it
+displayName: Gemma 3 4B
+description: 
+supportedMethods: ['generateContent', 'countTokens']
+version: 001
+display_name: Gemma 3 4B
+----------------------------------------
+39.
+Name: models/gemma-3-12b-it
+displayName: Gemma 3 12B
+description: 
+supportedMethods: ['generateContent', 'countTokens']
+version: 001
+display_name: Gemma 3 12B
+----------------------------------------
+40.
+Name: models/gemma-3-27b-it
+displayName: Gemma 3 27B
+description: 
+supportedMethods: ['generateContent', 'countTokens']
+version: 001
+display_name: Gemma 3 27B
+----------------------------------------
+41.
+Name: models/gemma-3n-e4b-it
+displayName: Gemma 3n E4B
+description: 
+supportedMethods: ['generateContent', 'countTokens']
+version: 001
+display_name: Gemma 3n E4B
+----------------------------------------
+42.
+Name: models/gemma-3n-e2b-it
+displayName: Gemma 3n E2B
+description: 
+supportedMethods: ['generateContent', 'countTokens']
+version: 001
+display_name: Gemma 3n E2B
+----------------------------------------
+43.
+Name: models/gemini-2.5-flash-lite
+displayName: Gemini 2.5 Flash-Lite
+description: Stable version of Gemini 2.5 Flash-Lite, released in July of 2025
+supportedMethods: ['generateContent', 'countTokens', 'createCachedContent', 'batchGenerateContent']
+version: 001
+display_name: Gemini 2.5 Flash-Lite
+----------------------------------------
+44.
+Name: models/gemini-2.5-flash-image-preview
+displayName: Nano Banana
+description: Gemini 2.5 Flash Preview Image
+supportedMethods: ['generateContent', 'countTokens']
+version: 2.0
+display_name: Nano Banana
+----------------------------------------
+45.
+Name: models/embedding-001
+displayName: Embedding 001
+description: Obtain a distributed representation of a text.
+supportedMethods: ['embedContent']
+version: 001
+display_name: Embedding 001
+----------------------------------------
+46.
+Name: models/text-embedding-004
+displayName: Text Embedding 004
+description: Obtain a distributed representation of a text.
+supportedMethods: ['embedContent']
+version: 004
+display_name: Text Embedding 004
+----------------------------------------
+47.
+Name: models/gemini-embedding-exp-03-07
+displayName: Gemini Embedding Experimental 03-07
+description: Obtain a distributed representation of a text.
+supportedMethods: ['embedContent', 'countTextTokens', 'countTokens']
+version: exp-03-07
+display_name: Gemini Embedding Experimental 03-07
+----------------------------------------
+48.
+Name: models/gemini-embedding-exp
+displayName: Gemini Embedding Experimental
+description: Obtain a distributed representation of a text.
+supportedMethods: ['embedContent', 'countTextTokens', 'countTokens']
+version: exp-03-07
+display_name: Gemini Embedding Experimental
+----------------------------------------
+49.
+Name: models/gemini-embedding-001
+displayName: Gemini Embedding 001
+description: Obtain a distributed representation of a text.
+supportedMethods: ['embedContent', 'countTextTokens', 'countTokens', 'asyncBatchEmbedContent']
+version: 001
+display_name: Gemini Embedding 001
+----------------------------------------
+50.
+Name: models/aqa
+displayName: Model that performs Attributed Question Answering.
+description: Model trained to return answers to questions that are grounded in provided sources, along with estimating answerable probability.
+supportedMethods: ['generateAnswer']
+version: 001
+display_name: Model that performs Attributed Question Answering.
+----------------------------------------
+51.
+Name: models/imagen-3.0-generate-002
+displayName: Imagen 3.0
+description: Vertex served Imagen 3.0 002 model
+supportedMethods: ['predict']
+version: 002
+display_name: Imagen 3.0
+----------------------------------------
+52.
+Name: models/imagen-4.0-generate-preview-06-06
+displayName: Imagen 4 (Preview)
+description: Vertex served Imagen 4.0 model
+supportedMethods: ['predict']
+version: 01
+display_name: Imagen 4 (Preview)
+----------------------------------------
+53.
+Name: models/imagen-4.0-ultra-generate-preview-06-06
+displayName: Imagen 4 Ultra (Preview)
+description: Vertex served Imagen 4.0 ultra model
+supportedMethods: ['predict']
+version: 01
+display_name: Imagen 4 Ultra (Preview)
+----------------------------------------
+54.
+Name: models/imagen-4.0-generate-001
+displayName: Imagen 4
+description: Vertex served Imagen 4.0 model
+supportedMethods: ['predict']
+version: 001
+display_name: Imagen 4
+----------------------------------------
+55.
+Name: models/imagen-4.0-ultra-generate-001
+displayName: Imagen 4 Ultra
+description: Vertex served Imagen 4.0 ultra model
+supportedMethods: ['predict']
+version: 001
+display_name: Imagen 4 Ultra
+----------------------------------------
+56.
+Name: models/imagen-4.0-fast-generate-001
+displayName: Imagen 4 Fast
+description: Vertex served Imagen 4.0 Fast model
+supportedMethods: ['predict']
+version: 001
+display_name: Imagen 4 Fast
+----------------------------------------
+57.
+Name: models/veo-2.0-generate-001
+displayName: Veo 2
+description: Vertex served Veo 2 model. Access to this model requires billing to be enabled on the associated Google Cloud Platform account. Please visit https://console.cloud.google.com/billing to enable it.
+supportedMethods: ['predictLongRunning']
+version: 2.0
+display_name: Veo 2
+----------------------------------------
+58.
+Name: models/veo-3.0-generate-preview
+displayName: Veo 3
+description: Veo 3 preview.
+supportedMethods: ['predictLongRunning']
+version: 3.0
+display_name: Veo 3
+----------------------------------------
+59.
+Name: models/veo-3.0-fast-generate-preview
+displayName: Veo 3 fast
+description: Veo 3 fast preview.
+supportedMethods: ['predictLongRunning']
+version: 3.0
+display_name: Veo 3 fast
+----------------------------------------
+60.
+Name: models/veo-3.0-generate-001
+displayName: Veo 3
+description: Veo 3 preview.
+supportedMethods: ['predictLongRunning']
+version: 3.0
+display_name: Veo 3
+----------------------------------------
+61.
+Name: models/veo-3.0-fast-generate-001
+displayName: Veo 3 fast
+description: Veo 3 fast preview.
+supportedMethods: ['predictLongRunning']
+version: 3.0
+display_name: Veo 3 fast
+----------------------------------------
+62.
+Name: models/gemini-2.5-flash-preview-native-audio-dialog
+displayName: Gemini 2.5 Flash Preview Native Audio Dialog
+description: Gemini 2.5 Flash Preview Native Audio Dialog
+supportedMethods: ['countTokens', 'bidiGenerateContent']
+version: gemini-2.5-flash-preview-native-audio-dialog-2025-05-19
+display_name: Gemini 2.5 Flash Preview Native Audio Dialog
+----------------------------------------
+63.
+Name: models/gemini-2.5-flash-exp-native-audio-thinking-dialog
+displayName: Gemini 2.5 Flash Exp Native Audio Thinking Dialog
+description: Gemini 2.5 Flash Exp Native Audio Thinking Dialog
+supportedMethods: ['countTokens', 'bidiGenerateContent']
+version: gemini-2.5-flash-exp-native-audio-thinking-dialog-2025-05-19
+display_name: Gemini 2.5 Flash Exp Native Audio Thinking Dialog
+----------------------------------------
+64.
+Name: models/gemini-2.0-flash-live-001
+displayName: Gemini 2.0 Flash 001
+description: Gemini 2.0 Flash 001
+supportedMethods: ['bidiGenerateContent', 'countTokens']
+version: 001
+display_name: Gemini 2.0 Flash 001
+----------------------------------------
+65.
+Name: models/gemini-live-2.5-flash-preview
+displayName: Gemini Live 2.5 Flash Preview
+description: Gemini Live 2.5 Flash Preview
+supportedMethods: ['bidiGenerateContent', 'countTokens']
+version: 001
+display_name: Gemini Live 2.5 Flash Preview
+----------------------------------------
+66.
+Name: models/gemini-2.5-flash-live-preview
+displayName: Gemini 2.5 Flash Live Preview
+description: Gemini 2.5 Flash Live Preview
+supportedMethods: ['bidiGenerateContent', 'countTokens']
+version: 001
+display_name: Gemini 2.5 Flash Live Preview
