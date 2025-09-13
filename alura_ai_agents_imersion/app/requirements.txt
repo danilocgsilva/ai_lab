@@ -116,3 +116,7 @@ urllib3==2.5.0
     # via requests
 zstandard==0.24.0
     # via langsmith
+langchain_community
+faiss-cpu
+pymupdf
+langchain-text-splitters

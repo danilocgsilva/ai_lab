@@ -63,6 +63,3 @@ testes = [
 for mensagem_teste in testes:
     print(f"Pergunta: {mensagem_teste}\n -> Resposta: {triagem(mensagem_teste)}\n{'-'*50}")
 
-
-
-
