@@ -1,8 +1,6 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
-import sys
-from pydantic import BaseModel, Field
-from typing import Literal, List, Dict
+from typing import Dict
 from functions import getArguments
 from TriagemOut import TriagemOut
 from langchain_core.messages import SystemMessage, HumanMessage
@@ -31,6 +29,7 @@ TRIAGEM_PROMPT = (
 )
 
 modelo = args.model
+
 llm = ChatGoogleGenerativeAI(
     model=modelo,
     temperature=temperature,
@@ -56,14 +55,14 @@ testes = [
     "Posso reembolsar a internet?",
     "Quero mais 5 dias de trabalho remoto. Como faço?",
     "Posso reembolsar recursos ou treinamento da Alura?",
-    "Quantas capivaras tem no rio Pinheiros?"
+    "Quantas capivaras tem no rio Pinheiros?",
+    "Você é um agente de qual empresa?",
+    "Você é você?",
 ]
 
 for mensagem_teste in testes:
     print(f"Pergunta: {mensagem_teste}\n -> Resposta: {triagem(mensagem_teste)}\n{'-'*50}")
 
-# resposta_teste = llm.invoke(question)
-# print(resposta_teste)
-# print("Hello world!")
+
 
 
