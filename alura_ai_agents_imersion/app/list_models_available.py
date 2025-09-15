@@ -20,13 +20,11 @@ models = genai.list_models()
 index = 1
 for model in models:
     string_returned = format2(index, model)
-    index += 1
+    
     if args.only_gemma and not re.search(r'gemma', string_returned, re.IGNORECASE):
         continue
     print("-" * 40)
     print(
         format_module_info(index, model)
     )
-
-
-
+    index += 1
