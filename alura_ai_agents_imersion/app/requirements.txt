@@ -120,3 +120,4 @@ langchain_community
 faiss-cpu
 pymupdf
 langchain-text-splitters
+langgraph

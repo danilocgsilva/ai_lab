@@ -1,9 +1,8 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
-from typing import Dict
 from functions import getArguments
 from TriagemOut import TriagemOut
-from langchain_core.messages import SystemMessage, HumanMessage
+from Triagem import Triagem
 
 args = getArguments()
 
@@ -41,16 +40,6 @@ llm_triagem = ChatGoogleGenerativeAI(
     api_key=GOOGLE_API_KEY
 )
 
-triagem_chain = llm_triagem.with_structured_output(TriagemOut)
-
-def triagem(mensagem: str) -> Dict:
-    saida: TriagemOut = triagem_chain.invoke([
-        SystemMessage(content=TRIAGEM_PROMPT),
-        HumanMessage(content=mensagem)
-    ])
-    
-    return saida.model_dump()
-
 testes = [
     "Posso reembolsar a internet?",
     "Quero mais 5 dias de trabalho remoto. Como faço?",
@@ -60,6 +49,8 @@ testes = [
     "Você é você?",
 ]
 
+triagem = Triagem(llm_triagem, TRIAGEM_PROMPT)
+
 for mensagem_teste in testes:
-    print(f"Pergunta: {mensagem_teste}\n -> Resposta: {triagem(mensagem_teste)}\n{'-'*50}")
+    print(f"Pergunta: {mensagem_teste}\n -> Resposta: {triagem.execute(mensagem_teste)}\n{'-'*50}")
 
