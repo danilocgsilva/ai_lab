@@ -1,6 +1,7 @@
 import google.generativeai as genai
 import os
 import argparse
+from typing import Dict
 
 def format_module_info(index, m):
   """Formats module information into a single string.
@@ -70,3 +71,32 @@ def getArguments():
     )
     
     return parser.parse_args()
+
+def perguntar_politica_RAG(pergunta: str, retriever, document_chain) -> Dict:
+    docs_relacionados = retriever.invoke(pergunta)
+    if not docs_relacionados:
+        return {
+            "answer": "Não sei.",
+            "citacoes": [],
+            "contexto_encontrado": False
+        }
+    answer = document_chain.invoke(
+        {
+            "input": pergunta,
+            # "context": formatar_citacoes(docs_relacionados, pergunta)
+            "context": docs_relacionados
+        }
+    )
+    txt = (answer or "").strip()
+    if txt.rstrip(".!?") == "Não sei":
+        return {
+            "answer": "Não sei.",
+            "citacoes": [],
+            "contexto_encontrado": False
+        }
+    return {
+        "answer": txt,
+        # "citacoes": formatar_citacoes(docs_relacionados, pergunta),
+        "citacoes": docs_relacionados,
+        "contexto_encontrado": True
+    }
