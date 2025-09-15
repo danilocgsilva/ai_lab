@@ -1,7 +1,9 @@
 from AgentState import AgentState
 from Triagem import Triagem
-from functions import perguntar_politica_RAG
+from functions import perguntar_politica_RAG, salvar_imagem_grafo
 from typing import Dict
+from langgraph.graph import StateGraph, START, END
+from IPython.display import display, Image
 
 def node_triagem(state: AgentState, triagem: Triagem) -> AgentState:
     print("Executando o nó de triagem...")
@@ -58,14 +60,14 @@ KEYWORDS_ABRIR_TICKET = [
     "acesso especial"
 ]
 
-def decidir_principal(state: AgentState) -> str:
+def decidir_pos_triagem(state: AgentState) -> str:
     print("Decidindo após a triagem...")
     decisao = state["triagem"]["decisao"]
     
     opcoes = {
-        "AUTO_RESOLVER": "Respondendo com as informação da IA.",
-        "PEDIR_INFO": "Continuando o fluxo com conversa com usuário para pedir informação.",
-        "ABRIR_CHAMADO": "Acionando a abertura de chamado."
+        "AUTO_RESOLVER": "auto",
+        "PEDIR_INFO": "info",
+        "ABRIR_CHAMADO": "chamado"
     }
     
     return opcoes.get(decisao, "Decisão inválida ou não reconhecida.")
@@ -74,14 +76,41 @@ def decidir_depois_auto_resolver(state: AgentState) -> str:
     print("Decidindo após o auto resolver...")
     if state.get("rag_sucesso"):
         print("RAG com sucesso. Finalizando o fluxo...")
-        return "Finalizando o fluxo com resposta da IA."
+        return "ok"
     
     state_da_pergunta = (state["pergunta"] or "").lower()
     
     if any(keyword in state_da_pergunta for keyword in KEYWORDS_ABRIR_TICKET):
         print("O RAG falhou, mas foram encontradas keywords de abertura de ticket. Abrindo...")
-        return "Decidindo abrir chamado."
+        return "chamado"
     
     print("RAG falhou e não foram encontradas keywords de abertura de ticket. Vou pedir mais informações...")
     
-    return "Pedir info"
+    return "info"
+
+workflow = StateGraph(AgentState)
+
+workflow.add_node("triagem", node_triagem)
+workflow.add_node("auto_resolver", node_resolver)
+workflow.add_node("pedir_info", node_pedir_info)
+workflow.add_node("abrir_chamado", node_abrir_chamado)
+
+workflow.add_edge(START, "triagem")
+workflow.add_conditional_edges("triagem", decidir_pos_triagem, {
+    "auto": "auto_resolver",
+    "info": "pedir_info",
+    "chamado": "abrir_chamado"
+})
+workflow.add_conditional_edges("auto_resolver", decidir_depois_auto_resolver, {
+    "info": "pedir_info",
+    "chamado": "abrir_chamado",
+    "ok": END
+})
+
+workflow.add_edge("pedir_info", END)
+workflow.add_edge("abrir_chamado", END)
+
+grafo = workflow.compile()
+
+graph_bytes = grafo.get_graph().draw_mermaid_png()
+salvar_imagem_grafo(graph_bytes)

@@ -2,6 +2,8 @@ import google.generativeai as genai
 import os
 import argparse
 from typing import Dict
+from datetime import datetime
+from pathlib import Path
 
 def format_module_info(index, m):
   """Formats module information into a single string.
@@ -100,3 +102,12 @@ def perguntar_politica_RAG(pergunta: str, retriever, document_chain) -> Dict:
         "citacoes": docs_relacionados,
         "contexto_encontrado": True
     }
+
+def salvar_imagem_grafo(graph_bytes):
+    timestamp = datetime.now().strftime("%Y%m%d_%Hh%Mm%Ss")
+    file_name = f"graphs/graph_{timestamp}.png"
+    file_path = Path(file_name)
+    file_path.write_bytes(graph_bytes)
+    print(f"Image saved as '{file_path}'")
+    
+    # workflow.get_graph().draw(file_name, prog="dot", format="png")

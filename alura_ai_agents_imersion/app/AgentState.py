@@ -1,6 +1,6 @@
-from typing import TypeDict, Optional, Dict, List
+from typing import TypedDict, Optional, Dict, List
 
-class AgentState(TypeDict, total = False):
+class AgentState(TypedDict, total = False):
     pergunta: str
     triagem: dict
     resposta: Optional[str]
